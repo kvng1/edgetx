@@ -163,8 +163,8 @@ void extmoduleSendInvertedByte(uint8_t byte);
   extern uint8_t jackState;
   #define TRAINER_CONNECTED()           (jackState == TRAINER_ACTIVE)
 #elif defined(PCBXLITE)
-  // No Tainer jack on Taranis X-Lite
-  #define TRAINER_CONNECTED()           false
+  // add Trainer jack on Taranis X-Lite
+  #define TRAINER_CONNECTED()           true
 #else
   // Trainer detect catches PPM, detection would use more CPU
   #define TRAINER_CONNECTED()           true

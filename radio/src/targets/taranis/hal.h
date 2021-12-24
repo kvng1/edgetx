@@ -1565,7 +1565,7 @@
 
 // Trainer Port
 #define HARDWARE_TRAINER_EXTERNAL_MODULE
-#if defined(PCBXLITES) || defined(PCBX9LITE)
+#if defined(PCBXLITES) || defined(PCBX9LITE) || defined(PCBXLITE)
   // on these 2 radios the trainer port already uses DMA1_Stream6, we won't use the DMA
   #define TRAINER_RCC_AHB1Periph        RCC_AHB1Periph_GPIOD
   #define TRAINER_RCC_APB1Periph        RCC_APB1Periph_TIM4
@@ -1595,12 +1595,7 @@
   #define TRAINER_OUT_CCER              TIM_CCER_CC1E
   #define TRAINER_CCER_POLARYTY         TIM_CCER_CC1P
   #define TRAINER_IN_CCER               TIM_CCER_CC2E
-#elif defined(PCBXLITE)
-  #define TRAINER_TIMER                 TIM4
-  #define TRAINER_RCC_AHB1Periph        0
-  #define TRAINER_RCC_APB1Periph        RCC_APB1Periph_TIM4
-  #define TRAINER_TIMER_IRQn            TIM4_IRQn
-  #define TRAINER_TIMER_IRQHandler      TIM4_IRQHandler
+
 #else
   #define TRAINER_RCC_AHB1Periph        (RCC_AHB1Periph_GPIOA | RCC_AHB1Periph_GPIOC | RCC_AHB1Periph_DMA1)
   #define TRAINER_RCC_APB1Periph        RCC_APB1Periph_TIM3

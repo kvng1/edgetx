@@ -835,11 +835,6 @@ bool isTrainerModeAvailable(int mode)
     return false;
 #endif
 
-#if defined(PCBXLITE) && !defined(PCBXLITES)
-  if (mode == TRAINER_MODE_MASTER_TRAINER_JACK || mode == TRAINER_MODE_SLAVE)
-    return false;
-#endif
-
 #if defined(PCBTARANIS) || defined(PCBNV14)
   #if !defined(TRAINER_MODULE_CPPM)
   if (mode == TRAINER_MODE_MASTER_CPPM_EXTERNAL_MODULE)

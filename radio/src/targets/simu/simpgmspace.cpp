@@ -734,7 +734,7 @@ uint32_t isBootloaderStart(const uint8_t * block)
 }
 #endif // defined(STM32)
 
-#if defined(PCBXLITES)
+#if defined(PCBXLITES) || defined(PCBXLITE)
 bool isJackPlugged()
 {
   return false;
